@@ -101,6 +101,7 @@ Access Granted
 
 ---
 
+
 ## 6. if-else
 Executes code based on condition.
 
@@ -352,6 +353,156 @@ print(formatted_email)
 ```
 Output:
 user@gmail.com
+```
+
+---
+
+# 🔍 Python Membership Operators
+
+## 1. Membership Operators (in, not in)
+Used to check whether a value exists in a sequence (list, string, tuple, set, dict).
+
+- in → Returns True if value exists  
+- not in → Returns True if value does NOT exist  
+
+WHY: Widely used in validation, access control, filtering, and searching data.
+
+---
+
+## 2. Membership in List
+WHY: Used in applications like role validation, allowed users, feature flags.
+
+```
+allowed_roles = ["admin", "devops", "user"]
+
+current_role = "devops"
+
+if current_role in allowed_roles:
+    print("Access Granted")
+else:
+    print("Access Denied")
+```
+
+```
+Output:
+Access Granted
+```
+
+---
+
+## 3. Membership in String
+WHY: Used in search, log parsing, and keyword detection.
+
+```
+log_message = "ERROR: Database connection failed"
+
+if "ERROR" in log_message:
+    print("Trigger Alert")
+```
+
+```
+Output:
+Trigger Alert
+```
+
+---
+
+## 4. Membership in Dictionary (Keys)
+WHY: Used to check if a key exists before accessing it (prevents errors).
+
+```
+user = {
+    "name": "Nabeel",
+    "role": "admin"
+}
+
+if "role" in user:
+    print(f"Role: {user['role']}")
+```
+
+```
+Output:
+Role: admin
+```
+
+---
+
+## 5. Membership in Dictionary Values
+WHY: Used when validating values in config/data.
+
+```
+status_codes = {
+    200: "OK",
+    404: "Not Found"
+}
+
+if "OK" in status_codes.values():
+    print("Valid Status Present")
+```
+
+```
+Output:
+Valid Status Present
+```
+
+---
+
+## 6. Using not in
+WHY: Used for blocking invalid inputs or enforcing restrictions.
+
+```
+blocked_users = ["spam_user", "bot123"]
+
+username = "guest_user"
+
+if username not in blocked_users:
+    print("User Allowed")
+else:
+    print("User Blocked")
+```
+
+```
+Output:
+User Allowed
+```
+
+---
+
+## 7. Membership with Loop (Filtering Data)
+WHY: Used in real-world apps for filtering datasets.
+
+```
+users = ["admin", "test_user", "guest"]
+blocked = ["test_user"]
+
+for user in users:
+    if user not in blocked:
+        print(f"Processing {user}")
+```
+
+```
+Output:
+Processing admin
+Processing guest
+```
+
+---
+
+## 8. Membership in Set (Fast Lookup)
+WHY: Sets provide faster lookup (used in high-performance systems).
+
+```
+allowed_ips = {"192.168.1.1", "10.0.0.1"}
+
+ip = "10.0.0.1"
+
+if ip in allowed_ips:
+    print("IP Allowed")
+```
+
+```
+Output:
+IP Allowed
 ```
 
 ---
